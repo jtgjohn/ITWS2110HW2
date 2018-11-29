@@ -1,6 +1,7 @@
 
 
-function score(difficulty, time_taken) {
+function score(time_taken) {
+	var difficulty = document.getElementById("difficultySlider").slider("option","value");
 	var targetColor = document.getElementById("target").style.backgroundColor;
 	var guessColor = document.getElementById("guess").style.backgroundColor;
 	var targetVals = targetColor.substring(str.indexOf('(') + 1, str.length - 1).split(', ');
