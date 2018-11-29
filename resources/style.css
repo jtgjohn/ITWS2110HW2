@@ -1,0 +1,17 @@
+button {
+  color: white;
+  background-color: #00bfff;
+  border-radius: 5px;
+  border: 0px;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.slider .ui-slider-range{
+  background: #00bfff;
+}
+
+.demoHeaders {
+  text-align: center;
+}
