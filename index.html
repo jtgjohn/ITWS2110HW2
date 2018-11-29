@@ -9,7 +9,7 @@
 <h2 class="demoHeaders">Hexed</h2>
 <div id="slider"></div>
 <label for="difficultyAmount">Difficulty Level: </label>
-<input type="text" id="difficultyAmount" readonly>
+<label id="difficultyAmount">5</label>
   
 <script src="resources/jquery-ui-1.11.1/external/jquery/jquery.js"></script>
 <script src="resources/jquery-ui-1.11.1/jquery-ui.js"></script>
@@ -20,7 +20,7 @@
     max: 10,
     value: 5,
     slide: function(event, ui) {
-        $("#difficultyAmount").val("" + ui.value);
+        $("#difficultyAmount").html("" + ui.value);
     }
   });
 </script>
