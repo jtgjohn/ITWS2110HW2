@@ -6,16 +6,22 @@
   <link href="resources/jquery-ui-1.11.1/jquery-ui.css" rel="stylesheet">
 	<title>Team 8 HW 2</title>
 </head>
-<h2 class="demoHeaders">Slider</h2>
+<h2 class="demoHeaders">Hexed</h2>
 <div id="slider"></div>
+<label for="difficultyAmount">Difficulty Level: </label>
+<input type="text" id="difficultyAmount" readonly>
+  
 <script src="resources/jquery-ui-1.11.1/external/jquery/jquery.js"></script>
 <script src="resources/jquery-ui-1.11.1/jquery-ui.js"></script>
 <script>
   $( "#slider" ).slider({
-  orientation: "horizontal",
-  range: "min",
-  max: 255,
-  value: 127
-});
+    orientation: "horizontal",
+    range: "min",
+    max: 10,
+    value: 5,
+    slide: function(event, ui) {
+        $("#difficultyAmount").val("" + ui.value);
+    }
+  });
 </script>
 </html>
