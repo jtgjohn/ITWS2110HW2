@@ -1,0 +1,79 @@
+/*center the title of the game*/
+header {
+	text-align: center;
+}
+
+/*center the div containing the game*/
+.center {
+    margin: auto;
+    width: 50%;
+}
+
+button {
+	margin: auto;
+}
+
+/*styling for the red, green, and blue sliders*/
+#red, #green, #blue {
+	float: left;
+	clear: left;
+	width: 80%;
+	margin: 15px;
+}
+
+/*styling for the color swatch to find the RGB values of*/
+#swatch {
+	width: 120px;
+	height: 100px;
+	margin-left: 15px;
+	background-image: none;
+}
+
+/*styling for the color swatch representing the color of your chosen RGB values*/
+#answer {
+	width: 120px;
+	height: 100px;
+	margin-left: 15px;
+	background-image: none;
+}
+
+/*background colors of the red, green, and blue sliders along with the color of
+their handles*/
+#red .ui-slider-range { background: #ef2929; }
+#red .ui-slider-handle { border-color: #ef2929; }
+#green .ui-slider-range { background: #8ae234; }
+#green .ui-slider-handle { border-color: #8ae234; }
+#blue .ui-slider-range { background: #729fcf; }
+#blue .ui-slider-handle { border-color: #729fcf; }
+
+/*styling for the box containing the value of the red slider*/
+#redHexNum {
+	margin-top: 13px;
+	margin-left: 10px;
+	width: 30px;
+}
+
+/*styling for the box containing the value of the green slider*/
+#greenHexNum {
+	margin-top: 28px;
+	margin-left: 10px;
+	width: 30px;
+}
+
+/*styling for the box containing the value of the blue slider*/
+#blueHexNum {
+	margin-top: 28px;
+	margin-left: 10px;
+	width: 30px;
+}
+
+/*styling for the results table and its rows*/
+th{
+	width:20%;
+}
+td{
+	width:20%;
+}
+table{
+	text-align: left;
+}
