@@ -26,13 +26,13 @@
 <br>
 <button id="submit">Submit</button> 
 
-<div id="yours" class="ui-widget-content ui-corner-all"></div>
+<div id="guess" class="ui-widget-content ui-corner-all"></div>
 <div id="target" class="ui-widget-content ui-corner-all"></div>
 
 <script src="resources/jquery-ui-1.11.1/external/jquery/jquery.js"></script>
 <script src="resources/jquery-ui-1.11.1/jquery-ui.js"></script>
 <style>
-    #yours {
+    #guess {
 	width: 120px;
 	height: 100px;
 	margin-left: 15px;
@@ -47,8 +47,8 @@
 </style>
 <script>
     $(document).ready(function(){
-        $("#yours").css("background-color", "rgb(" + 245 + "," + 200 + "," + 100 + ")");
-        //$("#target").css("background-color", randomColor());
+        $("#guess").css("background-color", "rgb(" + 245 + "," + 200 + "," + 100 + ")");
+        $("#target").css("background-color", randomColor());
         $("#time").html(Date.now);
     });
    
@@ -62,7 +62,7 @@
             $redVal=$("#red").slider('option','value');
             $blueVal=$("#blue").slider('option','value');
             $greenVal=$("#green").slider('option','value');
-            $("#yours").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
         }
     });
     $( "#blue" ).slider({
@@ -75,7 +75,7 @@
             $redVal=$("#red").slider('option','value');
             $blueVal=$("#blue").slider('option','value');
             $greenVal=$("#green").slider('option','value');
-            $("#yours").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
         }
     });
     $( "#green" ).slider({
@@ -88,7 +88,7 @@
             $redVal=$("#red").slider('option','value');
             $blueVal=$("#blue").slider('option','value');
             $greenVal=$("#green").slider('option','value');
-            $("#yours").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
         }
     });
     $("#submit").click(function(){
