@@ -15,3 +15,23 @@ button {
 .demoHeaders {
   text-align: center;
 }
+
+#guess {
+	width: 120px;
+	height: 100px;
+	margin-left: 15px;
+	background-image: none;
+} 
+#target {
+	width: 120px;
+	height: 100px;
+	margin-left: 15px;
+	background-image: none;
+}
+
+#time{
+    visibility: hidden;
+}
+#endTime{
+    visibility: hidden;
+}

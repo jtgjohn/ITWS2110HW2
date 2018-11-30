@@ -9,7 +9,7 @@ $.fn.hexed = function(settings) {
     $("#hexed").append('<label for="turnsAmount">Number of Turns: </label>');
     $("#hexed").append('<label id="turnsAmount">10</label>')
     $("#hexed").append('<p></p>');
-    $("#hexed").append('<form action="gamepage.html"> <button id="start">Start</button> </form>');
+    $("#hexed").append('<button id="start">Start</button>');
     
     $("#difficultySlider").slider({
       orientation: "horizontal",
@@ -31,10 +31,89 @@ $.fn.hexed = function(settings) {
           $("#turnsAmount").html("" + ui.value);
       }
     });
+    $("#start").click(function() {
+      start();
+    });
   }
   
   init();
 
+  function start() {
+    $("#hexed").html("");
+    
+    $("#hexed").append("<h2 class='demoHeaders'>Hexed</h2>");
+    $("#hexed").append('<label for="redAm">R: </label>');
+    $("#hexed").append('<label id="redAm">255</label>');
+    $("#hexed").append('<div id="red"></div>');
+    $("#hexed").append('<label for="blueAm">B: </label>');
+    $("#hexed").append('<label id="blueAm">255</label>');
+    $("#hexed").append('<div id="blue"></div>');
+    $("#hexed").append('<label for="GreenAm">G: </label>');
+    $("#hexed").append('<label id="GreenAm">255</label>');
+    $("#hexed").append('<div id="green"></div>');
+    $("#hexed").append('<label id="time"></label>');
+    $("#hexed").append('<label id="endTime"></label>');
+    $("#hexed").append('<br>');
+    $("#hexed").append('<button id="submit">Submit</button> ');
+    $("#hexed").append('<div id="guess" class="ui-widget-content ui-corner-all"></div>');
+    $("#hexed").append('<div id="target" class="ui-widget-content ui-corner-all"></div>');
+
+    $(document).ready(function(){
+        $("#guess").css("background-color", "rgb(" + 245 + "," + 200 + "," + 100 + ")");
+        $("#target").css("background-color", randomColor());
+        $("#time").html(Date.now);
+    });
+   
+    $( "#red" ).slider({
+        orientation: "horizontal",
+        range: "min",
+        max: 255,
+        value: 255,
+        slide: function(event, ui) {
+            $("#redAm").html("" + ui.value);
+            $redVal=$("#red").slider('option','value');
+            $blueVal=$("#blue").slider('option','value');
+            $greenVal=$("#green").slider('option','value');
+            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+        }
+    });
+    $( "#blue" ).slider({
+        orientation: "horizontal",
+        range: "min",
+        max: 255,
+        value: 255,
+        slide: function(event, ui) {
+            $("#blueAm").html("" + ui.value);
+            $redVal=$("#red").slider('option','value');
+            $blueVal=$("#blue").slider('option','value');
+            $greenVal=$("#green").slider('option','value');
+            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+        }
+    });
+    $( "#green" ).slider({
+        orientation: "horizontal",
+        range: "min",
+        max: 255,
+        value: 255,
+        slide: function(event, ui) {
+            $("#GreenAm").html("" + ui.value);
+            $redVal=$("#red").slider('option','value');
+            $blueVal=$("#blue").slider('option','value');
+            $greenVal=$("#green").slider('option','value');
+            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+        }
+    });
+    $("#submit").click(function(){
+
+        //Calculates time taken for turn.
+        $("#endTime").html(Date.now);
+        $timeTakenMs= parseInt($("#endTime").html()) - parseInt($("#time").html());
+
+
+        console.log($timeTakenMs);
+    });
+  }
+  
   function score(time_taken) {
     var difficulty = document.getElementById("difficultySlider").slider("option","value");
     var targetColor = document.getElementById("target").style.backgroundColor;
