@@ -103,7 +103,7 @@ $.fn.hexed = function(settings) {
         value: 255,
         slide: function(event, ui) {
             $("#blueAm").html("" + ui.value);
-            var edVal=$("#red").slider('option','value');
+            var redVal=$("#red").slider('option','value');
             var blueVal=$("#blue").slider('option','value');
             var greenVal=$("#green").slider('option','value');
             $("#guess").css("background-color", "rgb(" + redVal + "," + greenVal + "," + blueVal + ")");
@@ -116,7 +116,7 @@ $.fn.hexed = function(settings) {
         value: 255,
         slide: function(event, ui) {
             $("#GreenAm").html("" + ui.value);
-            var edVal=$("#red").slider('option','value');
+            var redVal=$("#red").slider('option','value');
             var blueVal=$("#blue").slider('option','value');
             var greenVal=$("#green").slider('option','value');
             $("#guess").css("background-color", "rgb(" + redVal + "," + greenVal + "," + blueVal + ")");
@@ -132,17 +132,16 @@ $.fn.hexed = function(settings) {
         var blueVal=$("#blue").slider('option','value');
         var greenVal=$("#green").slider('option','value');
 		var timeTakenMs= parseInt($("#endTime").html()) - parseInt($("#time").html());
-        var scoreTurn = score($timeTakenMs,difficulty, $redVal, $greenVal, $blueVal);
-        totalScore+=$scoreTurn;
-        console.log($scoreTurn);
-        alert("Correct Answer:  " + document.getElementById("target").style.backgroundColor + "\n" + "Your answer:  " + document.getElementById("guess").style.backgroundColor + "\n" + "Points:  " + $scoreTurn);
+        var scoreTurn = score(timeTakenMs,difficulty, redVal, greenVal, blueVal);
+        totalScore+=scoreTurn;
+        alert("Correct Answer:  " + document.getElementById("target").style.backgroundColor + "\n" + "Your answer:  " + document.getElementById("guess").style.backgroundColor + "\n" + "Points:  " + scoreTurn);
     
         $("#target").css("background-color",randomColor() );
         $("#time").html(Date.now);
         $("#board").append("<tr>;" +
                 "<td> " + turns + "</td>;" +
-                "<td> " + $scoreTurn + "</td>;" +
-                "<td> " + $timeTakenMs + "ms" + "</td>;" +
+                "<td> " + scoreTurn + "</td>;" +
+                "<td> " + timeTakenMs + "ms" + "</td>;" +
                 "<td> " + totalScore + "</td>;" +
                 "</tr>;");
         if(turns >= maxTurns){
