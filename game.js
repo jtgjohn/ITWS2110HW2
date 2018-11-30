@@ -1,15 +1,17 @@
 $.fn.hexed = function(settings) {
+  var difficulty = 5;
+  
   function init(init) {
-    $("#hexed").append('<h2 class="demoHeaders">Hexed</h2>');
-    $("#hexed").append('<div id="difficultySlider" class="slider"></div>');
-    $("#hexed").append('<label for="difficultyAmount">Difficulty Level: </label>');
-    $("#hexed").append('<label id="difficultyAmount">5</label>')
-    $("#hexed").append('<p></p>')
-    $("#hexed").append('<div id="turnsSlider" class = "slider"></div>');
-    $("#hexed").append('<label for="turnsAmount">Number of Turns: </label>');
-    $("#hexed").append('<label id="turnsAmount">10</label>')
-    $("#hexed").append('<p></p>');
-    $("#hexed").append('<button id="start">Start</button>');
+    $(init).append('<h2 class="demoHeaders">Hexed</h2>');
+    $(init).append('<div id="difficultySlider" class="slider"></div>');
+    $(init).append('<label for="difficultyAmount">Difficulty Level: </label>');
+    $(init).append('<label id="difficultyAmount">5</label>')
+    $(init).append('<p></p>')
+    $(init).append('<div id="turnsSlider" class = "slider"></div>');
+    $(init).append('<label for="turnsAmount">Number of Turns: </label>');
+    $(init).append('<label id="turnsAmount">10</label>')
+    $(init).append('<p></p>');
+    $(init).append('<button id="start">Start</button>');
     
     $("#difficultySlider").slider({
       orientation: "horizontal",
@@ -19,6 +21,7 @@ $.fn.hexed = function(settings) {
       value: 5,
       slide: function(event, ui) {
           $("#difficultyAmount").html("" + ui.value);
+          difficulty = ui.value;
       }
     });
     $("#turnsSlider").slider({
@@ -32,30 +35,30 @@ $.fn.hexed = function(settings) {
       }
     });
     $("#start").click(function() {
-      start();
+      start(init);
     });
   }
   
-  init();
+  init(this);
 
-  function start() {
-    $("#hexed").html("");
+  function start(init) {
+    $(init).html("");
     
-    $("#hexed").append("<h2 class='demoHeaders'>Hexed</h2>");
-    $("#hexed").append('<label for="redAm">R: </label>');
-    $("#hexed").append('<label id="redAm">255</label>');
-    $("#hexed").append('<div id="red"></div>');
-    $("#hexed").append('<label for="blueAm">B: </label>');
-    $("#hexed").append('<label id="blueAm">255</label>');
-    $("#hexed").append('<div id="blue"></div>');
-    $("#hexed").append('<label for="GreenAm">G: </label>');
-    $("#hexed").append('<label id="GreenAm">255</label>');
-    $("#hexed").append('<div id="green"></div>');
-    $("#hexed").append('<label id="time"></label>');
-    $("#hexed").append('<label id="endTime"></label>');
-    $("#hexed").append('<br>');
-    $("#hexed").append('<button id="submit">Submit</button> ');
-    $("#hexed").append('<div id="guess" class="ui-widget-content ui-corner-all"></div>');
+    $(init).append("<h2 class='demoHeaders'>Hexed</h2>");
+    $(init).append('<label for="redAm">R: </label>');
+    $(init).append('<label id="redAm">255</label>');
+    $(init).append('<div id="red"></div>');
+    $(init).append('<label for="blueAm">B: </label>');
+    $(init).append('<label id="blueAm">255</label>');
+    $(init).append('<div id="blue"></div>');
+    $(init).append('<label for="GreenAm">G: </label>');
+    $(init).append('<label id="GreenAm">255</label>');
+    $(init).append('<div id="green"></div>');
+    $(init).append('<label id="time"></label>');
+    $(init).append('<label id="endTime"></label>');
+    $(init).append('<br>');
+    $(init).append('<button id="submit">Submit</button> ');
+    $(init).append('<div id="guess" class="ui-widget-content ui-corner-all"></div>');
     $("#hexed").append('<div id="target" class="ui-widget-content ui-corner-all"></div>');
 
     $(document).ready(function(){
@@ -114,8 +117,8 @@ $.fn.hexed = function(settings) {
     });
   }
   
-  function score(time_taken) {
-    var difficulty = document.getElementById("difficultySlider").slider("option","value");
+  function score(time_taken, difficulty) {
+    
     var targetColor = document.getElementById("target").style.backgroundColor;
     var guessColor = document.getElementById("guess").style.backgroundColor;
     var targetVals = targetColor.substring(str.indexOf('(') + 1, str.length - 1).split(', ');
