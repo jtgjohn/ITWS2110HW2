@@ -133,8 +133,7 @@ $.fn.hexed = function(settings) {
         totalScore+=$scoreTurn;
         console.log($scoreTurn);
         alert("Correct Answer:  " + document.getElementById("target").style.backgroundColor + "\n" + "Your answer:  " + document.getElementById("guess").style.backgroundColor + "\n" + "Points:  " + $scoreTurn);
-       
-        $("#guess").css("background-color", "rgb(" + 255 + "," + 255 + "," + 255 + ")");
+    
         $("#target").css("background-color",randomColor() );
         $("#time").html(Date.now);
         $("#board").append("<tr>;" +
