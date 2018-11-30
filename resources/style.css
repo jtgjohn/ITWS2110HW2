@@ -11,6 +11,9 @@ button {
 .slider .ui-slider-range{
   background: #00bfff;
 }
+.demoHeaders {
+  text-align: center;
+}
 
 #red .ui-slider-range {
 	background: #FF0000;	
@@ -21,7 +24,11 @@ button {
 #green .ui-slider-range{
 	background: #00ff00;
 }	
-
+.container{ 
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}
 #guess {
 	width: 120px;
 	height: 100px;
@@ -32,6 +39,7 @@ button {
 	width: 120px;
 	height: 100px;
 	margin-left: 15px;
+	margin-bottom: 20px;
 	background-image: none;
 }
 
@@ -41,6 +49,12 @@ button {
 #endTime{
     visibility: hidden;
 }
-.demoHeaders {
-  text-align: center;
+#board, table{
+	width: 100%;
+	border-collapse: collapse;
+}
+th, td{
+	padding: 1%;
+	border: 1px solid black;
+
 }

@@ -66,8 +66,8 @@ $.fn.hexed = function(settings) {
     $(init).append('<label id="endTime"></label>');
     $(init).append('<br>');
     $(init).append('<button id="submit">Submit</button> ');
-    $(init).append('<div id="guess" class="ui-widget-content ui-corner-all"></div>');
-    $(init).append('<div id="target" class="ui-widget-content ui-corner-all"></div>');
+	$(init).append('<div class="container"><h3>Guess</h3><div id="guess" class="ui-widget-content ui-corner-all"></div></div>');
+    $(init).append('<div class="container"><h3>Target</h3><div id="target" class="ui-widget-content ui-corner-all"></div></div>');
     $(init).append('<table id="board"> </table>');
 
     $(document).ready(function(){
