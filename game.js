@@ -128,11 +128,11 @@ $.fn.hexed = function(settings) {
         turns+=1;
         
         $("#endTime").html(Date.now);
-        $redVal=$("#red").slider('option','value');
-        $blueVal=$("#blue").slider('option','value');
-        $greenVal=$("#green").slider('option','value');
-        $timeTakenMs= parseInt($("#endTime").html()) - parseInt($("#time").html());
-        $scoreTurn = score($timeTakenMs,difficulty, $redVal, $greenVal, $blueVal);
+        var redVal=$("#red").slider('option','value');
+        var blueVal=$("#blue").slider('option','value');
+        var greenVal=$("#green").slider('option','value');
+		var timeTakenMs= parseInt($("#endTime").html()) - parseInt($("#time").html());
+        var scoreTurn = score($timeTakenMs,difficulty, $redVal, $greenVal, $blueVal);
         totalScore+=$scoreTurn;
         console.log($scoreTurn);
         alert("Correct Answer:  " + document.getElementById("target").style.backgroundColor + "\n" + "Your answer:  " + document.getElementById("guess").style.backgroundColor + "\n" + "Points:  " + $scoreTurn);
