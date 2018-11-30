@@ -128,8 +128,11 @@ $.fn.hexed = function(settings) {
         turns+=1;
         
         $("#endTime").html(Date.now);
+        $redVal=$("#red").slider('option','value');
+        $blueVal=$("#blue").slider('option','value');
+        $greenVal=$("#green").slider('option','value');
         $timeTakenMs= parseInt($("#endTime").html()) - parseInt($("#time").html());
-        $scoreTurn = score($timeTakenMs,difficulty);
+        $scoreTurn = score($timeTakenMs,difficulty, $redVal, $greenVal, $blueVal);
         totalScore+=$scoreTurn;
         console.log($scoreTurn);
         alert("Correct Answer:  " + document.getElementById("target").style.backgroundColor + "\n" + "Your answer:  " + document.getElementById("guess").style.backgroundColor + "\n" + "Points:  " + $scoreTurn);
@@ -150,16 +153,14 @@ $.fn.hexed = function(settings) {
     });
   }
   
-  function score(time_taken, difficulty) {
+  function score(time_taken, difficulty, r, g, b) {
     
     var targetColor = document.getElementById("target").style.backgroundColor;
-    var guessColor = document.getElementById("guess").style.backgroundColor;
     var targetVals = targetColor.substring(targetColor.indexOf('(') + 1, targetColor.length - 1).split(', ');
-    var guessVals = guessColor.substring(guessColor.indexOf('(') + 1, guessColor.length - 1).split(', ');
-
-    var rpo = (Math.abs(guessVals[0] - targetVals[0])/255) * 100;
-    var gpo = (Math.abs(guessVals[1] - targetVals[1])/255) * 100;
-    var bpo = (Math.abs(guessVals[2] - targetVals[2])/255) * 100;
+    
+    var rpo = (Math.abs(r - targetVals[0])/255) * 100;
+    var gpo = (Math.abs(g - targetVals[1])/255) * 100;
+    var bpo = (Math.abs(b - targetVals[2])/255) * 100;
     var avgPercOff = Math.floor((rpo + gpo + bpo) / 3);
 
     var score = ((15 - difficulty - avgPercOff) / (15 - difficulty)) * (15000 - time_taken);
