@@ -59,7 +59,7 @@ $.fn.hexed = function(settings) {
     $(init).append('<br>');
     $(init).append('<button id="submit">Submit</button> ');
     $(init).append('<div id="guess" class="ui-widget-content ui-corner-all"></div>');
-    $("#hexed").append('<div id="target" class="ui-widget-content ui-corner-all"></div>');
+    $(init).append('<div id="target" class="ui-widget-content ui-corner-all"></div>');
 
     $(document).ready(function(){
         $("#guess").css("background-color", "rgb(" + 245 + "," + 200 + "," + 100 + ")");
