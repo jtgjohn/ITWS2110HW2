@@ -90,9 +90,9 @@ $.fn.hexed = function(settings) {
         value: 255,
         slide: function(event, ui) {
             $("#redAm").html("" + ui.value);
-            var redVal=$("#red").slider('option','value');
-            var blueVal=$("#blue").slider('option','value');
-            var greenVal=$("#green").slider('option','value');
+            var redVal=document.getElementById("redAm").innerHTML;
+            var blueVal=document.getElementById("blueAm").innerHTML;
+            var greenVal=document.getElementById("GreenAm").innerHTML;
             $("#guess").css("background-color", "rgb(" + redVal + "," + greenVal + "," + blueVal + ")");
         }
     });
@@ -103,9 +103,9 @@ $.fn.hexed = function(settings) {
         value: 255,
         slide: function(event, ui) {
             $("#blueAm").html("" + ui.value);
-            var redVal=$("#red").slider('option','value');
-            var blueVal=$("#blue").slider('option','value');
-            var greenVal=$("#green").slider('option','value');
+            var redVal=document.getElementById("redAm").innerHTML;
+            var blueVal=document.getElementById("blueAm").innerHTML;
+            var greenVal=document.getElementById("GreenAm").innerHTML;
             $("#guess").css("background-color", "rgb(" + redVal + "," + greenVal + "," + blueVal + ")");
         }
     });
@@ -116,9 +116,9 @@ $.fn.hexed = function(settings) {
         value: 255,
         slide: function(event, ui) {
             $("#GreenAm").html("" + ui.value);
-            var redVal=$("#red").slider('option','value');
-            var blueVal=$("#blue").slider('option','value');
-            var greenVal=$("#green").slider('option','value');
+            var redVal=document.getElementById("redAm").innerHTML;
+            var blueVal=document.getElementById("blueAm").innerHTML;
+            var greenVal=document.getElementById("GreenAm").innerHTML;;
             $("#guess").css("background-color", "rgb(" + redVal + "," + greenVal + "," + blueVal + ")");
         }
     });
@@ -128,10 +128,10 @@ $.fn.hexed = function(settings) {
         turns+=1;
         
         $("#endTime").html(Date.now);
-        var redVal=$("#red").slider('option','value');
-        var blueVal=$("#blue").slider('option','value');
-        var greenVal=$("#green").slider('option','value');
-		var timeTakenMs= parseInt($("#endTime").html()) - parseInt($("#time").html());
+        var redVal=document.getElementById("redAm").innerHTML;
+        var blueVal=document.getElementById("blueAm").innerHTML;
+        var greenVal=document.getElementById("GreenAm").innerHTML;
+		    var timeTakenMs= parseInt($("#endTime").html()) - parseInt($("#time").html());
         var scoreTurn = score(timeTakenMs,difficulty, redVal, greenVal, blueVal);
         totalScore+=scoreTurn;
         alert("Correct Answer:  " + document.getElementById("target").style.backgroundColor + "\n" + "Your answer:  " + document.getElementById("guess").style.backgroundColor + "\n" + "Points:  " + scoreTurn);
