@@ -90,10 +90,10 @@ $.fn.hexed = function(settings) {
         value: 255,
         slide: function(event, ui) {
             $("#redAm").html("" + ui.value);
-            $redVal=$("#red").slider('option','value');
-            $blueVal=$("#blue").slider('option','value');
-            $greenVal=$("#green").slider('option','value');
-            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+            var redVal=$("#red").slider('option','value');
+            var blueVal=$("#blue").slider('option','value');
+            var greenVal=$("#green").slider('option','value');
+            $("#guess").css("background-color", "rgb(" + redVal + "," + greenVal + "," + blueVal + ")");
         }
     });
     $( "#blue" ).slider({
@@ -103,10 +103,10 @@ $.fn.hexed = function(settings) {
         value: 255,
         slide: function(event, ui) {
             $("#blueAm").html("" + ui.value);
-            $redVal=$("#red").slider('option','value');
-            $blueVal=$("#blue").slider('option','value');
-            $greenVal=$("#green").slider('option','value');
-            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+            var edVal=$("#red").slider('option','value');
+            var blueVal=$("#blue").slider('option','value');
+            var greenVal=$("#green").slider('option','value');
+            $("#guess").css("background-color", "rgb(" + redVal + "," + greenVal + "," + blueVal + ")");
         }
     });
     $( "#green" ).slider({
@@ -116,10 +116,10 @@ $.fn.hexed = function(settings) {
         value: 255,
         slide: function(event, ui) {
             $("#GreenAm").html("" + ui.value);
-            $redVal=$("#red").slider('option','value');
-            $blueVal=$("#blue").slider('option','value');
-            $greenVal=$("#green").slider('option','value');
-            $("#guess").css("background-color", "rgb(" + $redVal + "," + $greenVal + "," + $blueVal + ")");
+            var edVal=$("#red").slider('option','value');
+            var blueVal=$("#blue").slider('option','value');
+            var greenVal=$("#green").slider('option','value');
+            $("#guess").css("background-color", "rgb(" + redVal + "," + greenVal + "," + blueVal + ")");
         }
     });
     $("#submit").click(function(){
