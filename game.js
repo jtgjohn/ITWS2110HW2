@@ -71,7 +71,7 @@ $.fn.hexed = function(settings) {
     $(init).append('<table id="board"> </table>');
 
     $(document).ready(function(){
-        $("#guess").css("background-color", "rgb(" + 245 + "," + 200 + "," + 100 + ")");
+        $("#guess").css("background-color", "rgb(" + 255 + "," + 255 + "," + 255 + ")");
         $("#target").css("background-color", randomColor());
         $("#time").html(Date.now);
         $("#board").append("<tr>;" +
@@ -134,7 +134,7 @@ $.fn.hexed = function(settings) {
         console.log($scoreTurn);
         alert("Correct Answer:  " + document.getElementById("target").style.backgroundColor + "\n" + "Your answer:  " + document.getElementById("guess").style.backgroundColor + "\n" + "Points:  " + $scoreTurn);
        
-        $("#guess").css("background-color", "rgb(" + 245 + "," + 200 + "," + 100 + ")");
+        $("#guess").css("background-color", "rgb(" + 255 + "," + 255 + "," + 255 + ")");
         $("#target").css("background-color",randomColor() );
         $("#time").html(Date.now);
         $("#board").append("<tr>;" +
