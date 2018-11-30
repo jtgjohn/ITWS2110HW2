@@ -56,12 +56,12 @@ $.fn.hexed = function(settings) {
     $(init).append('<label for="redAm">R: </label>');
     $(init).append('<label id="redAm">255</label>');
     $(init).append('<div id="red"></div>');
-    $(init).append('<label for="blueAm">B: </label>');
-    $(init).append('<label id="blueAm">255</label>');
-    $(init).append('<div id="blue"></div>');
     $(init).append('<label for="GreenAm">G: </label>');
     $(init).append('<label id="GreenAm">255</label>');
     $(init).append('<div id="green"></div>');
+    $(init).append('<label for="blueAm">B: </label>');
+    $(init).append('<label id="blueAm">255</label>');
+    $(init).append('<div id="blue"></div>');
     $(init).append('<label id="time"></label>');
     $(init).append('<label id="endTime"></label>');
     $(init).append('<br>');
